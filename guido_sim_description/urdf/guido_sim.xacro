@@ -1,0 +1,395 @@
+<?xml version="1.0" ?>
+<robot name="guido_sim" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find guido_sim_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find guido_sim_description)/urdf/guido_sim.trans" />
+<xacro:include filename="$(find guido_sim_description)/urdf/guido_sim.gazebo" />
+
+
+   <!-- link name="dummy">
+   </link -->
+
+   <link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0063537340173332926 3.9681313692529877e-17 0.05164121621053905"/>
+    <mass value="0.938802159456533"/>
+    <inertia ixx="0.009747" ixy="0.0" ixz="-0.000214" iyy="0.013356" iyz="-0.0" izz="0.022897"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fr_wheel__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="4.440892098500626e-15 0.014999999999999958 0.0"/>
+    <mass value="0.1698048771968933"/>
+    <inertia ixx="0.000133" ixy="0.0" ixz="0.0" iyy="0.000234" iyz="0.0" izz="0.000133"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.13 0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/fr_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.13 0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/fr_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fl_wheel__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.551914400963142e-15 -0.014999999999999875 0.0"/>
+    <mass value="0.1698048771968933"/>
+    <inertia ixx="0.000133" ixy="0.0" ixz="0.0" iyy="0.000234" iyz="0.0" izz="0.000133"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.13 -0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/fl_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.13 -0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/fl_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bl_wheel___1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.440892098500626e-15 -0.014999999999999875 6.938893903907228e-18"/>
+    <mass value="0.1698048771968933"/>
+    <inertia ixx="0.000133" ixy="0.0" ixz="-0.0" iyy="0.000234" iyz="0.0" izz="0.000133"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.13 -0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/bl_wheel___1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.13 -0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/bl_wheel___1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="br_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="4.551914400963142e-15 0.014999999999999958 0.0"/>
+    <mass value="0.1698048771968933"/>
+    <inertia ixx="0.000133" ixy="-0.0" ixz="0.0" iyy="0.000234" iyz="0.0" izz="0.000133"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.13 0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/br_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.13 0.205 -0.05"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/br_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.2413340681224376e-07 -1.976152687273254e-16 0.009999999999999981"/>
+    <mass value="0.07165284205728649"/>
+    <inertia ixx="2.2e-05" ixy="0.0" ixz="0.0" iyy="2.2e-05" iyz="0.0" izz="3.9e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.131905 0.0 -0.099"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.131905 0.0 -0.099"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="spacer_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.22249999999999995 0.015499999999999847 0.125"/>
+    <mass value="0.18404820000000016"/>
+    <inertia ixx="0.001032" ixy="-0.0" ixz="-0.0" iyy="0.001032" iyz="0.0" izz="3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="spacer_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.015500000000000264 0.015499999999999903 0.12500000000000003"/>
+    <mass value="0.18404820000000033"/>
+    <inertia ixx="0.001032" ixy="-0.0" ixz="0.0" iyy="0.001032" iyz="0.0" izz="3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="spacer_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.015500000000000264 -0.015500000000000153 0.12500000000000003"/>
+    <mass value="0.18404820000000033"/>
+    <inertia ixx="0.001032" ixy="-0.0" ixz="0.0" iyy="0.001032" iyz="-0.0" izz="3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="spacer_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.22249999999999995 -0.015500000000000125 0.125"/>
+    <mass value="0.18404820000000016"/>
+    <inertia ixx="0.001032" ixy="0.0" ixz="-0.0" iyy="0.001032" iyz="0.0" izz="3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/spacer_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="frame_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.18016293093198765 -0.17199972848082534 0.041573329823873864"/>
+    <mass value="0.5199548559238468"/>
+    <inertia ixx="0.007355" ixy="-0.0" ixz="0.000429" iyy="0.007373" iyz="-0.0" izz="0.014278"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.197 -0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/frame_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cap_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1167499929941262 0.16900000831205395 0.0023502068534852483"/>
+    <mass value="0.22829202000000315"/>
+    <inertia ixx="0.002564" ixy="-0.0" ixz="0.0" iyy="0.001251" iyz="-0.0" izz="0.003812"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.194 0.169 -0.31"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/cap_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.194 0.169 -0.31"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/cap_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tablet_holder_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.1336384225786269 0.1719999999999999 0.2418570041382359"/>
+    <mass value="0.16732805862193884"/>
+    <inertia ixx="0.003517" ixy="-0.0" ixz="-1.5e-05" iyy="0.003517" iyz="0.0" izz="5.9e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/tablet_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.197 0.172 -0.06"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/tablet_holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tablet_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.006712633215995953 -5.322377848058779e-06 0.010349017648959347"/>
+    <mass value="0.45460526206157775"/>
+    <inertia ixx="0.002798" ixy="0.0" ixz="-0.000535" iyy="0.001077" iyz="0.0" izz="0.002798"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.06 0.0 -0.54"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/tablet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.06 0.0 -0.54"/>
+    <geometry>
+      <mesh filename="package://guido_sim_description/meshes/tablet_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<!-- joint name="dummy_joint" type="fixed">
+   <parent link="dummy"/>
+   <child link="base_link"/>
+ </joint -->
+
+ 
+<joint name="fr_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.13 -0.205 0.05"/>
+  <parent link="base_link"/>
+  <child link="fr_wheel__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="fl_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="0.13 0.205 0.05"/>
+  <parent link="base_link"/>
+  <child link="fl_wheel__1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="bl_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.13 0.205 0.05"/>
+  <parent link="base_link"/>
+  <child link="bl_wheel___1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="br_joint" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.13 -0.205 0.05"/>
+  <parent link="base_link"/>
+  <child link="br_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.131905 0.0 0.099"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="spacer1_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.197 -0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="spacer_1_1"/>
+</joint>
+
+<joint name="spacer2_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.197 -0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="spacer_2_1"/>
+</joint>
+
+<joint name="spacer3_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.197 0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="spacer_3_1"/>
+</joint>
+
+<joint name="spacer4_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.197 0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="spacer_4_1"/>
+</joint>
+
+<joint name="frame_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.197 0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="frame_1"/>
+</joint>
+
+<joint name="cap_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.003 0.003 0.25"/>
+  <parent link="spacer_2_1"/>
+  <child link="cap_1"/>
+</joint>
+
+<joint name="holder_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.197 -0.172 0.06"/>
+  <parent link="base_link"/>
+  <child link="tablet_holder_1"/>
+</joint>
+
+<joint name="tablet_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.137 0.172 0.48"/>
+  <parent link="tablet_holder_1"/>
+  <child link="tablet_1"/>
+</joint>
+
+</robot>
